@@ -7,17 +7,16 @@ const dim = chalk.dim;
 
 module.exports = async (lastUpdated, states, minimal) => {
 	if (minimal) return console.log();
-	console.log(dim(`${sym.info} ${cyan(`Last Updated:`)} ${lastUpdated}`));
-	states && infoStates();
-	!states && infoCountries();
 	states && display.infoStates();
 	!states && display.infoCountries();
 
 	console.log(
 		`\n${sym.success} ${dim(
-			`Star the repo for updates → https://git.io/corona-cli`
+			`Original repo → https://git.io/corona-cli`
 		)}\n${sym.info} ${dim(
-			`Follow for more CLIs → https://twitter.com/MrAhmadAwais\n\n`
+			`Star repo for updates → https://git.io/carona-cli-2.0\n\n`
 		)}`
 	);
+
+	console.log(dim(`${sym.info} ${cyan(`Last Updated:`)} ${lastUpdated}`));
 };
