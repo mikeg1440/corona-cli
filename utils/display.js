@@ -20,3 +20,18 @@ const showTable = (table) => {
   }
 }
 
+const infoStates = () =>
+	console.log(
+    dim(`
+      \n${sym.info} ${cyan(`KEY:`)}
+      ${dim(`❯ `)}${cyan(`State:`)} Name of the state
+      ${dim(`❯ `)}${cyan(`Cases:`)} Total number of cases in a country
+      ${dim(`❯ `)}${cyan(`Cases (today):`)} Cases in 24 hours GMT/UTC
+      ${dim(`❯ `)}${cyan(`Deaths:`)} Total number of deaths in a state
+      ${dim(`❯ `)}${cyan(`Deaths (today):`)} Deaths in 24 hours GMT/UTC
+      ${dim(`❯ `)}${cyan(`Recovered:`)} Total number of recovered people
+      ${dim(`❯ `)}${cyan(`Active:`)}  Total number of active patients
+    `)
+  );
+exports.showTable = showTable
+exports.infoStates = infoStates
