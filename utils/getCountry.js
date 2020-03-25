@@ -39,7 +39,9 @@ module.exports = async (spinner, table, states, countryName) => {
 			comma(thisCountry.critical),
 			comma(thisCountry.casesPerOneMillion)
 		]);
-		spinner.stopAndPersist();
-		console.log(table.toString());
+		spinner.stopAndPersist({
+			symbol: green('✓'),
+			text: `${country.toUpperCase()} Data Fetched!`
+		});
 	}
 };
