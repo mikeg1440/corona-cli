@@ -10,6 +10,7 @@ process.on('unhandledRejection', (err) => {
 const ora = require('ora');
 const spinner = ora({ text: 'Loading...\n', indent: 10 });
 const Table = require('cli-table3');
+const inquirer = require('inquirer');
 const cli = require('./utils/cli.js');
 const init = require('./utils/init.js');
 const theEnd = require('./utils/theEnd.js');
@@ -18,6 +19,7 @@ const getStates = require('./utils/getStates.js');
 const getCountry = require('./utils/getCountry.js');
 const getWorldwide = require('./utils/getWorldwide.js');
 const getCountries = require('./utils/getCountries.js');
+const display = require('./utils/display.js');
 const {
 	style,
 	single,
@@ -32,29 +34,78 @@ const reverse = cli.flags.reverse;
 const limit = Math.abs(cli.flags.limit);
 const minimal = cli.flags.minimal;
 const options = { sortBy, limit, reverse, minimal };
+const chalk = require('chalk');
+
+// CHALK COLORS
+// const green = chalk.green;
+const yellow = chalk.yellow;
+const cyan = chalk.cyan;
+
 
 (async () => {
-	// Init.
-	init(minimal);
-	const [input] = cli.input;
-	input === 'help' && (await cli.showHelp(0));
-	const states = input === 'states' ? true : false;
-	const country = input;
+  const questions = [
+    {
+      name: 'menu',
+      type: 'list',
+      message: yellow('Choose a menu option'),
+      choices: [
+        {name: cyan(`Get all States data for USA`), value: 'usa'},
+        {name: cyan('Get data for all Countries'), value: 'all'},
+        {name: cyan('Get data for a given country'), value: 'country'},
+        {name: cyan('Get data for specific state in USA'), value: 'states'}
+      ]
+    },
+    {
+      name: 'country',
+      type: 'input',
+      message: 'Enter a Country Name: ',
+      default: 'USA',
+      when: (ans) => ans.menu === 'country'
+    },
+    {
+      name: 'state',
+      type: 'input',
+      message: 'Enter a state',
+      default: 'Connecticut',
+      when: (ans) => ans.menu === 'states'
+    },
+  ]
 
-	// Table
-	const head = xcolor ? single : colored;
-	const headStates = xcolor ? singleStates : coloredStates;
-	const border = minimal ? borderless : {};
-	const table = !states
-		? new Table({ head, style, chars: border })
-		: new Table({ head: headStates, style, chars: border });
+  const thickBorder = { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
+         , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
+         , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
+         , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
 
-	// Display data.
-	spinner.start();
-	const lastUpdated = await getWorldwide(table, states);
-	await getCountry(spinner, table, states, country);
-	await getStates(spinner, table, states, options);
-	await getCountries(spinner, table, states, country, options);
 
-	theEnd(lastUpdated, states, minimal);
+  states = false
+
+  inquirer.prompt(questions).then(async ans => {
+
+    states = ans.state
+    country = ans.country
+
+    // console.log(`states: ${states}\ncountry: ${country}`)
+
+    const head = xcolor ? single : colored;
+
+  	const headStates = xcolor ? singleStates : coloredStates;
+  	const border = minimal ? borderless : {};
+  	const table = !states
+  		? new Table({ head, style, chars: thickBorder, colWidths: [10, 20] })
+  		: new Table({ head: headStates, style, chars: thickBorder, colWidths: [10, 20] });
+
+  	// Display data.
+  	spinner.start();
+  	const lastUpdated = await getWorldwide(table, states);
+    theEnd(lastUpdated, states, minimal);
+    console.log(`states: ${states}\ncountry: ${country}`)
+  	await getCountry(spinner, table, states, country).then(res => display.showTable(res));
+  	await getStates(spinner, table, states, options).then(res => display.showTable(res));
+  	await getCountries(spinner, table, states, country, options).then(res => display.showTable(res));
+
+
+  })
+
+
+
 })();
