@@ -3,6 +3,7 @@ const axios = require('axios');
 const sym = require('log-symbols');
 const comma = require('comma-number');
 const red = chalk.red;
+const white = chalk.white;
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
 
@@ -29,7 +30,7 @@ module.exports = async (spinner, table, states, countryName) => {
 
 		table.push([
 			`—`,
-			thisCountry.country,
+			white(thisCountry.country),
 			comma(thisCountry.cases),
 			comma(thisCountry.todayCases),
 			comma(thisCountry.deaths),
