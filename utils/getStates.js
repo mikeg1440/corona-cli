@@ -1,6 +1,8 @@
 const axios = require('axios');
 const chalk = require('chalk');
 const cyan = chalk.cyan;
+const white = chalk.white;
+const green = chalk.green;
 const dim = chalk.dim;
 const comma = require('comma-number');
 const { sortingStateKeys } = require('./table.js');
@@ -27,7 +29,7 @@ module.exports = async (spinner, table, states, { sortBy, limit, reverse }) => {
 		allStates.map((oneState, count) => {
 			table.push([
 				count + 1,
-				oneState.state,
+				white(oneState.state),
 				comma(oneState.cases),
 				comma(oneState.todayCases),
 				comma(oneState.deaths),
