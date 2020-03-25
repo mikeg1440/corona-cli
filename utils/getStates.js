@@ -16,7 +16,12 @@ module.exports = async (spinner, table, states, { sortBy, limit, reverse }) => {
 			axios.get(`https://corona.lmao.ninja/states`)
 		);
 		handleError(`API is down, try again later.`, err, false);
-		let allStates = response.data;
+		let allStates = [];
+		if (typeof(states) === 'string'){
+			allStates = response.data.filter(state => state.state.toLowerCase() === states.toLowerCase())
+		}else {
+			allStates = response.data;
+		}
 
 		// Limit.
 		allStates = allStates.slice(0, limit);
