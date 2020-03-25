@@ -2,6 +2,8 @@ const axios = require('axios');
 const comma = require('comma-number');
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
+const chalk = require('chalk');
+const white = chalk.white;
 
 module.exports = async (table, states) => {
 	const [err, all] = await to(axios.get(`https://corona.lmao.ninja/all`));
@@ -12,7 +14,7 @@ module.exports = async (table, states) => {
 	if (!states) {
 		table.push([
 			`—`,
-			`Worldwide`,
+			white(`Worldwide`),
 			data[0],
 			`—`,
 			data[1],
