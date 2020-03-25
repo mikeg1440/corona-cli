@@ -3,9 +3,11 @@ const axios = require('axios');
 const sym = require('log-symbols');
 const comma = require('comma-number');
 const red = chalk.red;
+const green = chalk.green;
 const white = chalk.white;
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
+const display = require('./display.js')
 
 module.exports = async (spinner, table, states, countryName) => {
 	if (countryName && !states) {
@@ -44,5 +46,8 @@ module.exports = async (spinner, table, states, countryName) => {
 			symbol: green('✓'),
 			text: `${country.toUpperCase()} Data Fetched!`
 		});
+
+		// display.showTable(table);
+		return table
 	}
 };
