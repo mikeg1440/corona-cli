@@ -15,7 +15,10 @@ module.exports = async (spinner, table, states, countryName) => {
 		const thisCountry = response.data;
 
 		if (response.data === 'Country not found') {
-			spinner.stopAndPersist();
+			spinner.stopAndPersist({
+				symbol: red('𐄂'),
+				text: `Fetch Failed!`
+			});
 			console.log(
 				`${red(
 					`${sym.error} Nops. A country named "${countryName}" does not exist…`
