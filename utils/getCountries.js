@@ -9,6 +9,8 @@ const { sortingKeys } = require('./table.js');
 const to = require('await-to-js').default;
 const handleError = require('cli-handle-error');
 const orderBy = require('lodash.orderby');
+const display = require('./display.js')
+
 
 module.exports = async (
 	spinner,
@@ -57,6 +59,8 @@ module.exports = async (
 		});
 		const isRev = reverse ? `${dim(` & `)}${cyan(`Order`)}: reversed` : ``;
 		spinner.info(`${cyan(`Sorted by:`)} ${sortBy}${isRev}`);
-		console.log(table.toString());
+		// console.log(table.toString());
+		// display.showTable(table)
+		return table
 	}
 };
