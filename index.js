@@ -8,7 +8,7 @@ process.on('unhandledRejection', (err) => {
 });
 
 const ora = require('ora');
-const spinner = ora({ text: '' });
+const spinner = ora({ text: 'Loading...\n', indent: 10 });
 const Table = require('cli-table3');
 const cli = require('./utils/cli.js');
 const init = require('./utils/init.js');
