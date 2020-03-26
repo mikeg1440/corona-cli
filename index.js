@@ -80,9 +80,14 @@ const cyan = chalk.cyan;
   states = false
 
   inquirer.prompt(questions).then(async ans => {
-
-    states = ans.state
-    country = ans.country
+		console.log(ans)
+		if (ans.menu === 'usa'){
+			states = true
+			country = ans.menu
+		}else {
+			states = ans.state
+			country = ans.country
+		}
 
     // console.log(`states: ${states}\ncountry: ${country}`)
 
