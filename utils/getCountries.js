@@ -2,6 +2,8 @@ const axios = require('axios');
 const chalk = require('chalk');
 const cyan = chalk.cyan;
 const dim = chalk.dim;
+const white = chalk.white;
+const green = chalk.green;
 const comma = require('comma-number');
 const { sortingKeys } = require('./table.js');
 const to = require('await-to-js').default;
@@ -37,7 +39,7 @@ module.exports = async (
 		allCountries.map((oneCountry, count) => {
 			table.push([
 				count + 1,
-				oneCountry.country,
+				white(oneCountry.country),
 				comma(oneCountry.cases),
 				comma(oneCountry.todayCases),
 				comma(oneCountry.deaths),
