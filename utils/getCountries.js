@@ -51,7 +51,10 @@ module.exports = async (
 			]);
 		});
 
-		spinner.stopAndPersist();
+		spinner.stopAndPersist({
+			symbol: green('✓'),
+			text: 'All Countries Data Received!'
+		});
 		const isRev = reverse ? `${dim(` & `)}${cyan(`Order`)}: reversed` : ``;
 		spinner.info(`${cyan(`Sorted by:`)} ${sortBy}${isRev}`);
 		console.log(table.toString());
