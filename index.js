@@ -36,8 +36,7 @@ const minimal = cli.flags.minimal;
 const options = { sortBy, limit, reverse, minimal };
 const chalk = require('chalk');
 
-// CHALK COLORS
-// const green = chalk.green;
+// CONSOLE COLORS
 const yellow = chalk.yellow;
 const cyan = chalk.cyan;
 
@@ -71,10 +70,6 @@ const cyan = chalk.cyan;
     },
   ]
 
-  // const thickBorder = { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
-  //        , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
-  //        , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
-  //        , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
 
 	init(minimal);
 	const [input] = cli.input;
@@ -82,9 +77,9 @@ const cyan = chalk.cyan;
 	let states = input === 'states' ? true : false;
 	let country = input;
 
-  states = false
 
 	if (input !== undefined){
+
 		renderData(country, states, xcolor, minimal, spinner, options)
 	}else {
 		inquirer.prompt(questions).then(async ans => {
@@ -96,26 +91,8 @@ const cyan = chalk.cyan;
 				states = ans.state
 				country = ans.country
 			}
+
 			renderData(country, states, xcolor, minimal, spinner, options)
-			// console.log(`states: ${states}\ncountry: ${country}`)
-
-			// const head = xcolor ? single : colored;
-			//
-			// const headStates = xcolor ? singleStates : coloredStates;
-			// const border = minimal ? borderless : {};
-			// const table = !states
-			// 	? new Table({ head, style, chars: thickBorder, colWidths: [10, 20] })
-			// 	: new Table({ head: headStates, style, chars: thickBorder, colWidths: [10, 20] });
-			//
-			// // Display data.
-			// spinner.start();
-			// const lastUpdated = await getWorldwide(table, states);
-			// theEnd(lastUpdated, states, minimal);
-			// console.log(`states: ${states}\ncountry: ${country}`)
-			// await getCountry(spinner, table, states, country).then(res => display.showTable(res));
-			// await getStates(spinner, table, states, options).then(res => display.showTable(res));
-			// await getCountries(spinner, table, states, country, options).then(res => display.showTable(res));
-
 
 		})
 
