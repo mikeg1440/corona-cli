@@ -76,9 +76,14 @@ const cyan = chalk.cyan;
   //        , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
   //        , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
 
+	init(minimal);
+	const [input] = cli.input;
+	input === 'help' && (await cli.showHelp(0));
+	let states = input === 'states' ? true : false;
+	let country = input;
 
   states = false
-	input = undefined
+
 	if (input !== undefined){
 		renderData(country, states, xcolor, minimal, spinner, options)
 	}else {
