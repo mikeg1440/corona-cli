@@ -119,13 +119,16 @@ const cyan = chalk.cyan;
 
 })();
 
-const thickBorder = { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
-			 , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
-			 , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
-			 , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
 
 
 async function renderData(country, states, xcolor, minimal, spinner, options) {
+
+	const thickBorder = { 'top': '═' , 'top-mid': '╤' , 'top-left': '╔' , 'top-right': '╗'
+				 , 'bottom': '═' , 'bottom-mid': '╧' , 'bottom-left': '╚' , 'bottom-right': '╝'
+				 , 'left': '║' , 'left-mid': '╟' , 'mid': '─' , 'mid-mid': '┼'
+				 , 'right': '║' , 'right-mid': '╢' , 'middle': '│' }
+
+
 	const head = xcolor ? single : colored;
 
 	const headStates = xcolor ? singleStates : coloredStates;
