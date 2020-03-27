@@ -44,7 +44,7 @@ module.exports = async (spinner, table, states, countryName) => {
 		]);
 		spinner.stopAndPersist({
 			symbol: green('✓'),
-			text: `${country.toUpperCase()} Data Fetched!`
+			text: `${thisCountry.country} Data Fetched!`
 		});
 
 		// display.showTable(table);
