@@ -1,13 +1,13 @@
 {
 	"name": "corona-cli",
-	"version": "3.8.4",
+	"version": "3.8.5",
 	"description": "Track the Coronavirus disease (COVID-19).",
 	"license": "MIT",
-	"repository": "ahmadawais/corona-cli",
+	"repository": "mikeg1440/corona-cli",
 	"author": {
-		"name": "Ahmad Awais",
-		"email": "me@AhmadAwais.com",
-		"url": "https://twitter.com/MrAhmadAwais"
+		"name": "Michael Gaudreau",
+		"email": "gaudreaum01@gmail.com",
+		"url": "https://github.com/mikeg1440"
 	},
 	"main": "index.js",
 	"engines": {
@@ -24,7 +24,7 @@
 	"keywords": [
 		"corona-cli",
 		"Ahmad Awais",
-		"ahmadawais"
+		"mikeg1440"
 	],
 	"scripts": {
 		"format": "prettier --write \"./**/*.{js,json}\"",
