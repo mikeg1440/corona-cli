@@ -83,7 +83,7 @@ const cyan = chalk.cyan;
 		renderData(country, states, xcolor, minimal, spinner, options)
 	}else {
 		inquirer.prompt(questions).then(async ans => {
-			console.log(ans)
+
 			if (ans.menu === 'usa'){
 				states = true
 				country = ans.menu
@@ -123,7 +123,7 @@ async function renderData(country, states, xcolor, minimal, spinner, options) {
 	spinner.start();
 	const lastUpdated = await getWorldwide(table, states);
 	theEnd(lastUpdated, states, minimal);
-	console.log(`states: ${states}\ncountry: ${country}`)
+	// console.log(`states: ${states}\ncountry: ${country}`)
 	await getCountry(spinner, table, states, country).then(res => display.showTable(res));
 	await getStates(spinner, table, states, options).then(res => display.showTable(res));
 	await getCountries(spinner, table, states, country, options).then(res => display.showTable(res));
