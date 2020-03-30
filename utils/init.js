@@ -3,7 +3,7 @@ const pkgJSON = require('./../package.json');
 const updateNotifier = require('update-notifier');
 
 module.exports = async () => {
-	welcome(`corona-cli`, `by Awais.dev\n${pkgJSON.description}`, {
+	welcome(`corona-cli`, `original by Awais.dev\nForked and expanded by Michael Gaudreau\n${pkgJSON.description}`, {
 		bgColor: `#007C91`,
 		color: `#FFFFFF`,
 		bold: true,
