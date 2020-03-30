@@ -7,9 +7,16 @@
 
 Track the Coronavirus disease (COVID-19) or the Novel Coronavirus Strain.
 
-[![DOWNLOADS](https://img.shields.io/npm/dt/corona-cli?label=DOWNLOADS%20%20%E2%9D%AF&colorA=007C92&colorB=007C92&style=flat)](https://www.npmjs.com/package/corona-cli) [![Learn VSCode](https://img.shields.io/badge/-VSCODE.pro%20%E2%86%92-gray.svg?colorB=007C92&style=flat)](https://VSCode.pro/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=007C92&colorB=007C92&style=flat)](https://twitter.com/mrahmadawais/)
+<!-- [![DOWNLOADS](https://img.shields.io/npm/dt/corona-cli?label=DOWNLOADS%20%20%E2%9D%AF&colorA=007C92&colorB=007C92&style=flat)](https://www.npmjs.com/package/corona-cli) [![Learn VSCode](https://img.shields.io/badge/-VSCODE.pro%20%E2%86%92-gray.svg?colorB=007C92&style=flat)](https://VSCode.pro/?utm_source=GitHubFOSS) [![Follow @MrAhmadAwais on Twitter](https://img.shields.io/badge/FOLLOW%20@MRAHMADAWAIS%20%E2%86%92-gray.svg?colorA=007C92&colorB=007C92&style=flat)](https://twitter.com/mrahmadawais/) -->
 
 </h4>
+
+<h4 align='center'>
+
+  This is a fork of [Ahmad Awais's](https://github.com/ahmadawais) [carona-cli](https://github.com/ahmadawais/corona-cli) with some extra features and aesthetic's added in.
+
+</h4>
+
 
 <br>
 
@@ -42,6 +49,15 @@ npx corona-cli
 [![⚙️](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/usage.png)](./../../)
 
 ## Usage
+
+### Without Parameters
+
+If no options/params passed in then you will get a CLI menu
+```
+corona
+```
+
+
 
 ### All Countries
 
@@ -155,7 +171,7 @@ corona --help
 
 ## License & Conduct
 
-- MIT © [Ahmad Awais](https://twitter.com/MrAhmadAwais/)
+- MIT
 - [Code of Conduct](code-of-conduct.md)
 - SOURCES: , and all of the following:
 
@@ -322,7 +338,7 @@ corona --help
 
 [![🙌](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/connect.png)](./../../)
 
-## Connect
+<!-- ## Connect
 
 <div align="left">
     <p><a href="https://github.com/ahmadawais"><img alt="GitHub @AhmadAwais" align="center" src="https://img.shields.io/badge/GITHUB-gray.svg?colorB=6cc644&colorA=6cc644&style=flat" /></a>&nbsp;<small><strong>(follow)</strong> To stay up to date on free & open-source software</small></p>
@@ -354,4 +370,4 @@ Or you can back me by checking out my super fun video course. As developers, we 
 <br>
 
 [![VSCode](https://img.shields.io/badge/-VSCode.pro%20%E2%86%92-gray.svg?colorB=4D2AFF&style=flat)](https://VSCode.pro/?utm_source=GitHubFOSS)
-[![Ahmad on Twitter](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Follow%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/)
+[![Ahmad on Twitter](https://img.shields.io/twitter/follow/mrahmadawais.svg?style=social&label=Follow%20@MrAhmadAwais)](https://twitter.com/mrahmadawais/) -->
