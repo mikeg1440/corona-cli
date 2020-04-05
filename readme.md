@@ -50,16 +50,39 @@ npx corona-cli
 
 ## Usage
 
-### Without Parameters
+### Without Arguments
 
+Command line usage without parameters/arguments
 If no options/params passed in then you will get a CLI menu
 ```
 corona
 ```
+[![corona-cli menu](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-menu.gif?raw=true)](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-menu.gif?raw=true)
 
+#### Get Specific Country Data
 
+Select the `Get data for given country` menu option then type in country name.
+Default is the USA
 
-### All Countries
+[![specific country menu option](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-country.gif?raw=true)](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-country.gif?raw=true)
+
+#### Get All States Data
+
+Select the `Get all states data for USA` from menu
+
+[![all states data menu option](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-states.gif?raw=true)](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-states.gif?raw=true)
+
+#### Get Specific States Data
+
+Select the `Get data for specific state` option from menu then type in a states name, the default state is set to Connecticut
+
+[![get specifc state data menu option](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-state.gif?raw=true)](https://github.com/mikeg1440/files/blob/master/corona-cli/corona-state.gif?raw=true)
+
+### With Arguments
+
+Command line usage with parameters/arguments
+
+#### All Countries
 
 ```sh
 # Display data for all countries.
@@ -74,7 +97,7 @@ corona -x
 
 [![📟](./.github/corona.gif)](./../../)
 
-### Single Country
+#### Single Country
 
 ```sh
 # Display data for given country.
@@ -89,7 +112,7 @@ corona usa
 
 [![📟](./.github/country.gif)](./../../)
 
-### US States Data
+#### US States Data
 
 ```sh
 # Display data for all the US states.
@@ -104,7 +127,7 @@ corona states -s cases-today
 
 [![📟](./.github/states.gif)](./../../)
 
-### Sort Data
+#### Sort Data
 
 ```sh
 # Sort data by type
@@ -129,7 +152,7 @@ corona -s active -r
 
 [![📟](./.github/sort.gif)](./../../)
 
-### Limit the output
+#### Limit the output
 
 ````sh
 # Print a limited number of entries to the output.
