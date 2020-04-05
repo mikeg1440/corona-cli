@@ -30,6 +30,29 @@ Track the Coronavirus disease (COVID-19) or the Novel Coronavirus Strain.
 
 <br>
 
+## Contents
+
+- [Install](#install)
+- [Usage](#usage)
+- [Without Arguments](#without-arguments)
+  - [Get Specific Country Data](#get-specific-country-data)
+  - [Get All States Data](#get-all-states-data)
+  - [Get Specific States Data](#get-specific-states-data)
+- [With Arguments](#with-arguments)
+  - [All countries](#all-countries)
+  - [Single Country](#single-country)
+  - [US States Data](#us-states-data)
+  - [Sort Data](#sort-data)
+  - [Limit the Output](#limit-the-output)
+  - [CLI Help](#cli-help)
+- [Changelog](#changelog)
+- [License & Conduct](#license-&-conduct)
+- [Sources](#sources)
+
+
+<br>
+
+
 [![📟](https://raw.githubusercontent.com/ahmadawais/stuff/master/images/git/install.png)](./../../)
 
 ## Install
